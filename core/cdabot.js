@@ -1,9 +1,11 @@
 var botui = new BotUI('cdabot');
 //importation
 document.write("<script language='JavaScript' src='core/droits.js'></script>");
+document.write("<script language='JavaScript' src='core/french/main.js'></script>");
+document.write("<script language='JavaScript' src='core/english/main.js'></script>");
+document.write("<script language='JavaScript' src='core/pular/main.js'></script>");
 
   botui.message.bot({
-    photo: 'build/rasht.png',
     content: 'Bonjour 👋!'
   }).then(function () {
         Vue.use(Toasted)
@@ -15,7 +17,6 @@ document.write("<script language='JavaScript' src='core/droits.js'></script>");
     }).then(function () {
       return botui.message.bot({
         delay: 1000,
-  	   photo: 'build/rasht.png',
         content: 'Je peux vous aider à trouver plus rapidement ce que vous chercher'
       });
     }).then(function () {
@@ -28,7 +29,6 @@ var start = function(){
   botui.message.bot({
     loading:true,
     delay: 2000,
-    photo: 'build/rasht.png',
     content: 'Sélectionner une langue pour commencer',
   })
     .then(function () {
@@ -68,11 +68,13 @@ var start = function(){
       })
   }).then(function (res) {
     if(res.value == 'english') {
-      intégration();
+      mainEnglish();
     } else if(res.value == 'pular') {
-      visiteur(); 
-    } else  {
-      rechercher(); 
+      mainPular(); 
+    } else if(res.value == 'pular') {
+      mainFrench(); 
+    } else {
+      mainFrench(); 
     }
   });
 }
