@@ -125,7 +125,7 @@ var gouvernance = function() {
     <li><strong>Honorary President </strong>Mme Mbaranga Gasarabwe</li>\
     <li><strong>Honorary President </strong>Messaoud Prosper AMOUYAL</li>\
     <li><strong>Vice-President </strong>Patrick GIVANOVICTH</li>\
-    <li><strong>Vice-President honorifique </strong>Kacem AIYTYALLA</li>\
+    <li><strong>Honorary Vice-President </strong>Kacem AIYTYALLA</li>\
     <li><strong>Honorary Vice-President </strong>Balkissa Idé SIDDO</li>\
     <li><strong>Honorary Vice-President </strong>Diane Malikane Sugira</li>\
     <li><strong>Honorary Vice-President </strong>Diadié dit Amadou SANKARE</li>\
@@ -166,7 +166,7 @@ var bureau = function() {
     type:'html',
     content: '<ul><li><strong>President </strong>Amadou DIAWARA</li>\
     <li><strong>General secretary </strong>Karim RAHHAOUI</li>\
-    <li><strong>Treasuries </strong>Mamadou DOUMBIA</li>\
+    <li><strong>Treasurer </strong>Mamadou DOUMBIA</li>\
     <li><strong>General coordinator </strong>Binatou Coulibaly</li>\
     </ul>'
   }).then(function () {
