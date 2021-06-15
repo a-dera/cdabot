@@ -23,24 +23,36 @@ var chitchat = function() {
      
 } 
 var start_bot = function() {  
-    botui.action.text({
-          delay: 1000,
-          action: {
-            icon: 'search',
-            placeholder: 'Taper quelque chose ✍️...'
-          }
-        }).then(function (res) {
-
-         if(res.value == 'quitter' || res.value == 'q') {
-          mainFrench();
-        } else  {
+  botui.action.text({
+    delay: 1000,
+    action: {
+      icon: 'search',
+      placeholder: 'Taper quelque chose ✍️...'
+    }
+    }).then(function (res) {
+      if(res.value == 'quitter' || res.value == 'q') {
+      mainFrench();
+    } else  {
+        bot.reply("local-user", res).then(function (reply) {
+            botReply(reply);
+          }).then(function () { 
+            return function botReply(res) {
+              botui.message.bot({ 
+                content: '' + res.value
+              })
+          }.then(function () { 
+            return start_bot()
+          }) 
+        }) 
+      }
+  });
+}
+//--------------------------------------------------------------------------
+/* else  {
          return botui.message.bot({ 
             delay: 500,
-            content: 'Oups,😟 je n\'ai pas bien compris votre recherche 🤔'
+            content: 'Oups,😟 je n\'ai pas bien compris votre recherche 🤔' res.value
           }).then(function () { 
             return start_bot()
           })      
-        }
-      })
-      ;
-}
+        }*/
