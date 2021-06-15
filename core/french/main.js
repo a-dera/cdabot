@@ -1,4 +1,4 @@
-
+document.write("<script language='JavaScript' src='core/french/chitchat.js'></script>");
 /*------ -------------Section main--------*/
 var mainFrench = function() {
   botui.action.button({
@@ -68,7 +68,7 @@ var presentation = function() {
     delay: 1000,
     action: [{
       text: 'Gouvernance',
-      _icon: 'crown',
+      _icon: 'hat',
       get icon() {
         return this._icon;
       },
@@ -78,7 +78,7 @@ var presentation = function() {
       value: 'gouvernance'
     }, {
       text: 'Bureau exécutif',
-      _icon: 'pen',
+      _icon: 'pencil',
       get icon() {
         return this._icon;
       },
@@ -88,7 +88,7 @@ var presentation = function() {
       value: 'bureau'
     },{
       text: 'Equipe',
-      _icon: 'team',
+      _icon: 'users',
       get icon() {
         return this._icon;
       },
@@ -96,6 +96,16 @@ var presentation = function() {
         this._icon = value;
       },
       value: 'team'
+    },{
+      text: 'Contacter le Cluster',
+      _icon: 'phone',
+      get icon() {
+        return this._icon;
+      },
+      set icon(value) {
+        this._icon = value;
+      },
+      value: 'contact'
     },{
         text: 'Retour',
         icon: 'angle-left',
@@ -108,6 +118,8 @@ var presentation = function() {
         bureau(); 
       } else if(res.value == 'team') {
         team(); 
+      } else if(res.value == 'contact') {
+        contact(); 
       } else {
         mainFrench(); 
       }
@@ -193,8 +205,52 @@ var team = function() {
         delay: 1000,
         loading: true,
         type:'html',
-        content: '<a href="https://clusterdigitalafrica.com/gouvernance/" target="_blank"> Cliquez vpour vous rendre à la page dédié </a>'
+        content: '<a href="https://clusterdigitalafrica.com/team/" target="_blank"> Cliquez vpour vous rendre à la page dédié </a>'
       }).then(function () {
+    return botui.action.button({
+      delay: 1000,
+      action: [{
+        text: 'Retour',
+        icon: 'angle-left',
+        value: 'skip'
+      }
+    ]
+    })
+  }).then(function (res) {
+  if(res.value == 'skip') {
+    presentation();
+  } else{
+    presentation();
+  }
+  });
+}
+
+var contact = function() {
+  botui.message.bot({
+        delay: 1000,
+        loading: true,
+        type:'html',
+        content: '<div class="control">\
+        <div class="tags has-addons">\
+          <span class="tag is-primary is-light">Sotuba Aci, prés de la clinique ALMED</span>\
+          </div></div><br>\
+          <span class="tag is-info is-rounded">info@clusterdigitalafrica.com</span><br><br>\
+          <span class="tag is-info is-rounded">(+223) - 6675 - 3636</span>'
+      }).then(function () {
+      return botui.message.bot({
+        delay: 1000,
+        loading: true,
+        type:'html',
+        content: '<iframe frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?q=Group%20Famib%20-%20%C3%A0%20la%20hauteur%20de%20vos%20attentes&amp;t=m&amp;z=10&amp;output=embed&amp;iwloc=near" title="Group Famib - à la hauteur de vos attentes" aria-label="Group Famib - à la hauteur de vos attentes"></iframe>'
+      });
+    })/*.then(function () {
+      return botui.message.bot({
+        delay: 1000,
+        loading: true,
+        type:'embed',
+        content: 'https://maps.google.com/maps?q=Group%20Famib%20-%20%C3%A0%20la%20hauteur%20de%20vos%20attentes&amp;t=m&amp;z=10&amp;output=embed&amp;iwloc=near" '
+      });
+    })*/.then(function () {
     return botui.action.button({
       delay: 1000,
       action: [{
@@ -221,7 +277,7 @@ var adhesion = function() {
     delay: 1000,
     action: [{
       text: 'Comment adhérer?',
-      _icon: 'how',
+      _icon: 'question',
       get icon() {
         return this._icon;
       },
@@ -260,7 +316,7 @@ var adhesion = function() {
       } else if(res.value == 'why') {
         pourquoi(); 
       } else if(res.value == 'conditions') {
-        condions(); 
+        conditions(); 
       } else {
         mainFrench(); 
       }
@@ -269,9 +325,28 @@ var adhesion = function() {
 }
 
 var comment = function() {
-    
-  
-
+  botui.message.bot({
+    delay: 500,
+    type:'html',
+    content: '<ul><li>L’adhésion au Cluster Digital Africa se fait à travers une demande préalable au moyen d’un formulaire de demande d’adhésion. Celle-ci est conditionnée par l\'acceptation du Bureau exécutif du cluster digital Africa. Et est valable pour l’année civile en cours. Après l’acceptation par la structure de validation des candidatures, le postulant est automatiquement considéré comme membre du cluster tout en acceptant les termes de la charte du Cluster Digital Africa. </li>\
+                  <li><strong>L’adhésion au Cluster Digital Africa implique: </strong><br> L’engagement à respecter les Statuts de l’organisme. Si toutefois un membre ne souhaite pas/plus renouveler son adhésion au réseau, il devra en informer le Cluster (par courrier ou par email) dans un délai d’un mois (30jours). </li></ul>'
+      }).then(function () {
+    return botui.action.button({
+      delay: 1000,
+      action: [{
+        text: 'Retour',
+        icon: 'angle-left',
+        value: 'skip'
+      }
+    ]
+    })
+  }).then(function (res) {
+  if(res.value == 'skip') {
+    adhesion();
+  } else{
+    adhesion();
+  }
+  });
 }
 
 var pourquoi = function() {
