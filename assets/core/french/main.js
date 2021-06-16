@@ -1,4 +1,5 @@
 document.write("<script language='JavaScript' src='core/french/chitchat.js'></script>");
+document.write("<script language='JavaScript' src='core/rivescript.js'></script>");
 /*------ -------------Section main--------*/
 var mainFrench = function() {
   botui.action.button({
@@ -40,11 +41,11 @@ var mainFrench = function() {
       }]
   }).then(function (res) {
       if(res.value == 'cda') {
-        presentation();
+        presentationFrench();
       } else if(res.value == 'adhesion') {
-        adhesion(); 
+        adhesionFrench(); 
       } else if(res.value == 'search') {
-        chitchat(); 
+        chitchatFrench(); 
       } else {
         start(); 
       }
@@ -57,7 +58,7 @@ var mainFrench = function() {
 
 
 /*------ -------------Section  Infoarmtations générales sur CDA-------*/
-var presentation = function() {
+var presentationFrench = function() {
 
     botui.message.bot({ // TODO #2 #1 Correction des icones
     delay: 500,
@@ -113,13 +114,13 @@ var presentation = function() {
       }]
   }).then(function (res) {
       if(res.value == 'gouvernance') {
-        gouvernance();
+        gouvernanceFrench();
       } else if(res.value == 'bureau') {
-        bureau(); 
+        bureauFrench(); 
       } else if(res.value == 'team') {
-        team(); 
+        teamFrench(); 
       } else if(res.value == 'contact') {
-        contact(); 
+        contactFrench(); 
       } else {
         mainFrench(); 
       }
@@ -128,7 +129,7 @@ var presentation = function() {
 
 }
 
-var gouvernance = function() {
+var gouvernanceFrench = function() {
   botui.message.bot({
     delay: 500,
     type:'html',
@@ -165,14 +166,14 @@ var gouvernance = function() {
     })
   }).then(function (res) {
   if(res.value == 'skip') {
-    presentation();
+    presentationFrench();
   } else{
-    presentation();
+    presentationFrench();
   }
   });
 }
 
-var bureau = function() {
+var bureauFrench = function() {
    botui.message.bot({
     delay: 500,
     type:'html',
@@ -193,14 +194,14 @@ var bureau = function() {
     })
   }).then(function (res) {
   if(res.value == 'skip') {
-    presentation();
+    presentationFrench();
   } else{
-    presentation();
+    presentationFrench();
   }
   });
 }
 
-var team = function() {
+var teamFrench = function() {
   botui.message.bot({
         delay: 1000,
         loading: true,
@@ -218,14 +219,14 @@ var team = function() {
     })
   }).then(function (res) {
   if(res.value == 'skip') {
-    presentation();
+    presentationFrench();
   } else{
-    presentation();
+    presentationFrench();
   }
   });
 }
 
-var contact = function() {
+var contactFrench = function() {
   botui.message.bot({
         delay: 1000,
         loading: true,
@@ -262,9 +263,9 @@ var contact = function() {
     })
   }).then(function (res) {
   if(res.value == 'skip') {
-    presentation();
+    presentationFrench();
   } else{
-    presentation();
+    presentationFrench();
   }
   });
 }
@@ -272,7 +273,7 @@ var contact = function() {
 
 
 /*------ -------------Section  Renseignement pour adhérer--------*/
-var adhesion = function() {
+var adhesionFrench = function() {
      botui.action.button({
     delay: 1000,
     action: [{
@@ -312,11 +313,11 @@ var adhesion = function() {
       }]
   }).then(function (res) {
       if(res.value == 'how') {
-        comment();
+        commentFrench();
       } else if(res.value == 'why') {
-        pourquoi(); 
+        pourquoiFrench(); 
       } else if(res.value == 'conditions') {
-        conditions(); 
+        conditionsFrench(); 
       } else {
         mainFrench(); 
       }
@@ -324,7 +325,7 @@ var adhesion = function() {
 
 }
 
-var comment = function() {
+var commentFrench = function() {
   botui.message.bot({
     delay: 500,
     type:'html',
@@ -342,14 +343,14 @@ var comment = function() {
     })
   }).then(function (res) {
   if(res.value == 'skip') {
-    adhesion();
+    adhesionFrench();
   } else{
-    adhesion();
+    adhesionFrench();
   }
   });
 }
 
-var pourquoi = function() {
+var pourquoiFrench = function() {
 
   botui.message.bot({ // TODO #2 #1 Correction des icones
     delay: 500,
@@ -374,14 +375,14 @@ var pourquoi = function() {
     })
   }).then(function (res) {
   if(res.value == 'conditions') {
-    conditions();
+    conditionsFrench();
   } else{
-    adhesion();
+    adhesionFrench();
   }
   });
 }
 
-var conditions = function() {
+var conditionsFrench = function() {
   botui.message.bot({
     delay: 500,
     type:'html',
@@ -399,9 +400,9 @@ var conditions = function() {
     })
   }).then(function (res) {
   if(res.value == 'skip') {
-    adhesion();
+    adhesionFrench();
   } else{
-    adhesion();
+    adhesionFrench();
   }
   });
 }

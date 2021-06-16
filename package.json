@@ -1,7 +1,34 @@
 {
+  "name": "CDA BOT",
+  "version": "0.1.4",
+  "description": "Un bot pour Cluster Digital Africa",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "lint": "eslint **.js",
+    "fix": "eslint --fix *.js",
+    "test": "mocha test/*.test.js --check-leaks --timeout 5000"
+  },
+  "author": "Amédée DERA Elisée GUIRE",
+  "license": "MIT",
+  "engines": {
+    "node": ">=11.14"
+  },
   "dependencies": {
     "botui": "0.3.6",
+    "express": "^4.17.1",
+    "handlebars": "^4.7.4",
     "rivescript": "2.1.0",
     "vue-toasted": "1.1.28"
+  },
+  "devDependencies": {
+    "eslint": "7.27.0",
+    "eslint-config-prettier": "8.3.0",
+    "eslint-plugin-node": "11.1.0",
+    "eslint-plugin-prettier": "3.4.0",
+    "eslint-plugin-promise": "5.1.0",
+    "gaxios": "4.3.0",
+    "mocha": "8.4.0",
+    "prettier": "2.3.0"
   }
 }

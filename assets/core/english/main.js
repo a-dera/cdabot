@@ -40,11 +40,11 @@ var mainEnglish = function() {
     }]
   }).then(function (res) {
     if(res.value == 'cda') {
-      presentation();
+      presentationEnglish();
     } else if(res.value == 'adhesion') {
-      adhesion();
+      adhesionEnglish();
     } else if(res.value == 'search') {
-      chitchat();
+      chitchatEnglish();
     } else {
       start();
     }
@@ -57,7 +57,7 @@ var mainEnglish = function() {
 
 
 /*------ -------------Section  Informations générales sur CDA-------*/
-var presentation = function() {
+var presentationEnglish = function() {
 
   botui.message.bot({ // TODO #2 #1 Correction des icones
     delay: 500,
@@ -103,11 +103,11 @@ var presentation = function() {
       }]
     }).then(function (res) {
       if(res.value == 'gouvernance') {
-        gouvernance();
+        gouvernanceEnglish();
       } else if(res.value == 'bureau') {
-        bureau();
+        bureauEnglish();
       } else if(res.value == 'team') {
-        team();
+        teamEnglish();
       } else {
         mainEnglish();
       }
@@ -116,7 +116,7 @@ var presentation = function() {
 
 }
 
-var gouvernance = function() {
+var gouvernanceEnglish = function() {
   botui.message.bot({
     delay: 500,
     type:'html',
@@ -153,14 +153,14 @@ var gouvernance = function() {
   })
 }).then(function (res) {
   if(res.value == 'skip') {
-    presentation();
+    presentationEnglish();
   } else{
-    presentation();
+    presentationEnglish();
   }
 });
 }
 
-var bureau = function() {
+var bureauEnglish = function() {
   botui.message.bot({
     delay: 500,
     type:'html',
@@ -181,9 +181,9 @@ var bureau = function() {
   })
 }).then(function (res) {
   if(res.value == 'skip') {
-    presentation();
+    presentationEnglish();
   } else{
-    presentation();
+    presentationEnglish();
   }
 });
 }
@@ -206,9 +206,9 @@ var team = function() {
   })
 }).then(function (res) {
   if(res.value == 'skip') {
-    presentation();
+    presentationEnglish();
   } else{
-    presentation();
+    presentationEnglish();
   }
 });
 }
@@ -216,7 +216,7 @@ var team = function() {
 
 
 /*------ -------------Section  Renseignement pour adhérer--------*/
-var adhesion = function() {
+var adhesionEnglish = function() {
   botui.action.button({
     delay: 1000,
     action: [{
@@ -256,11 +256,11 @@ var adhesion = function() {
     }]
   }).then(function (res) {
     if(res.value == 'how') {
-      comment();
+      commentEnglish();
     } else if(res.value == 'why') {
-      pourquoi();
+      pourquoiEnglish();
     } else if(res.value == 'conditions') {
-      condions();
+      condionsEnglish();
     } else {
       mainEnglish();
     }
@@ -268,13 +268,13 @@ var adhesion = function() {
 
 }
 
-var comment = function() {
+var commentEnglish = function() {
 
 
 
 }
 
-var pourquoi = function() {
+var pourquoiEnglish = function() {
 
   botui.message.bot({ // TODO #2 #1 Correction des icones
     delay: 500,
@@ -299,14 +299,14 @@ var pourquoi = function() {
   })
 }).then(function (res) {
   if(res.value == 'conditions') {
-    conditions();
+    conditionsEnglish();
   } else{
-    adhesion();
+    adhesionEnglish();
   }
 });
 }
 
-var conditions = function() {
+var conditionsEnglish = function() {
   botui.message.bot({
     delay: 500,
     type:'html',
@@ -324,9 +324,9 @@ var conditions = function() {
   })
 }).then(function (res) {
   if(res.value == 'skip') {
-    adhesion();
+    adhesionEnglish();
   } else{
-    adhesion();
+    adhesionEnglish();
   }
 });
 }

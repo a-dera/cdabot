@@ -1,10 +1,9 @@
 var botui = new BotUI('cdabot'); // initialistion de BotUI
 
 //importation
-document.write("<script language='JavaScript' src='core/droits.js'></script>");
-document.write("<script language='JavaScript' src='core/french/main.js'></script>");
-document.write("<script language='JavaScript' src='core/english/main.js'></script>");
-document.write("<script language='JavaScript' src='core/pular/main.js'></script>");
+document.write("<script language='JavaScript' src='assets/core/french/main.js'></script>");
+document.write("<script language='JavaScript' src='assets/core/english/main.js'></script>");
+document.write("<script language='JavaScript' src='assets/core/pular/main.js'></script>");
 
   botui.message.bot({
     content: 'Bonjour 👋!'
@@ -72,7 +71,7 @@ var start = function(){
       mainEnglish();
     } else if(res.value == 'pular') {
       mainPular(); 
-    } else if(res.value == 'pular') {
+    } else if(res.value == 'french') {
       mainFrench(); 
     } else {
       mainFrench(); 

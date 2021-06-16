@@ -40,11 +40,11 @@ var mainPular = function() {
       }]
   }).then(function (res) {
       if(res.value == 'cda') {
-        presentation();
+        presentationPular();
       } else if(res.value == 'adhesion') {
-        adhesion();
+        adhesionPular();
       } else if(res.value == 'search') {
-        chitchat();
+        chitchatPular();
       } else {
         start();
       }
@@ -57,7 +57,7 @@ var mainPular = function() {
 
 
 /*------ -------------Section  Infoarmtations générales sur CDA-------*/
-var presentation = function() {
+var presentationPular = function() {
 
     botui.message.bot({ // TODO #2 #1 Correction des icones
     delay: 500,
@@ -103,11 +103,11 @@ var presentation = function() {
       }]
   }).then(function (res) {
       if(res.value == 'gouvernance') {
-        gouvernance();
+        gouvernancePular();
       } else if(res.value == 'bureau') {
-        bureau();
+        bureauPular();
       } else if(res.value == 'team') {
-        team();
+        teamPular();
       } else {
         mainPular();
       }
@@ -116,7 +116,7 @@ var presentation = function() {
 
 }
 
-var gouvernance = function() {
+var gouvernancePular = function() {
   botui.message.bot({
     delay: 500,
     type:'html',
@@ -153,14 +153,14 @@ var gouvernance = function() {
     })
   }).then(function (res) {
   if(res.value == 'skip') {
-    presentation();
+    presentationPular();
   } else{
-    presentation();
+    presentationPular();
   }
   });
 }
 
-var bureau = function() {
+var bureauPular = function() {
    botui.message.bot({
     delay: 500,
     type:'html',
@@ -181,14 +181,14 @@ var bureau = function() {
     })
   }).then(function (res) {
   if(res.value == 'skip') {
-    presentation();
+    presentationPular();
   } else{
-    presentation();
+    presentationPular();
   }
   });
 }
 
-var team = function() {
+var teamPular = function() {
   botui.message.bot({
         delay: 1000,
         loading: true,
@@ -206,9 +206,9 @@ var team = function() {
     })
   }).then(function (res) {
   if(res.value == 'skip') {
-    presentation();
+    presentationPular();
   } else{
-    presentation();
+    presentationPular();
   }
   });
 }
@@ -216,7 +216,7 @@ var team = function() {
 
 
 /*------ -------------Section  Renseignement pour adhérer--------*/
-var adhesion = function() {
+var adhesionPular = function() {
      botui.action.button({
     delay: 1000,
     action: [{
@@ -256,25 +256,25 @@ var adhesion = function() {
       }]
   }).then(function (res) {
       if(res.value == 'how') {
-        comment();
+        commentPular();
       } else if(res.value == 'why') {
-        pourquoi();
+        pourquoiPular();
       } else if(res.value == 'conditions') {
-        condions();
+        condionsPular();
       } else {
-        mainPular();
+        mainPularPular();
       }
   });
 
 }
 
-var comment = function() {
+var commentPular = function() {
 
 
 
 }
 
-var pourquoi = function() {
+var pourquoiPular = function() {
 
   botui.message.bot({ // TODO #2 #1 Correction des icones
     delay: 500,
@@ -299,14 +299,14 @@ var pourquoi = function() {
     })
   }).then(function (res) {
   if(res.value == 'conditions') {
-    conditions();
+    conditionsPular();
   } else{
-    adhesion();
+    adhesionPular();
   }
   });
 }
 
-var conditions = function() {
+var conditionsPular = function() {
   botui.message.bot({
     delay: 500,
     type:'html',
@@ -323,9 +323,9 @@ var conditions = function() {
     })
   }).then(function (res) {
   if(res.value == 'skip') {
-    adhesion();
+    adhesionPular();
   } else{
-    adhesion();
+    adhesionPular();
   }
   });
 }
