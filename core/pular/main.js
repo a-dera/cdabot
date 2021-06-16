@@ -4,7 +4,7 @@ var mainFrench = function() {
   botui.action.button({
     delay: 1000,
     action: [{
-      text: 'En savoir plus sur Cluster Digital Africa',
+      text: 'Sini onone djiddi pamtinodone no dum yarata',
       _icon: 'info',
       get icon() {
         return this._icon;
@@ -62,7 +62,7 @@ var presentation = function() {
     botui.message.bot({ // TODO #2 #1 Correction des icones
     delay: 500,
     type:'html',
-    content: 'Le Cluster permet aux entreprises de se regrouper et d’être représentées vis-à -vis de l’écosystème institutionnel. Adhérer le Cluster, c’est vous permettre de partager vos expériences & vos actualités avec le collectif et parfois élaborer des programmes collectifs. Adhérer le cluster, c’est valoriser l’excellence Numérique en Afrique.'
+      content: 'Cluster walatana enterpiriisidji no kawritiri e no andira haddi ley salla adunaru fu.Nadde ley Cluster, na hoytinana one no djewtirdone salla andè mone e gollidibe mon, e no bindir done dabaredji e mabe.Fa handene, nade ley cluster yo lémnude Afirikki.'
       }).then(function () {
     return botui.action.button({
     delay: 1000,
@@ -139,7 +139,7 @@ var gouvernance = function() {
         delay: 1000,
         loading: true,
         type:'html',
-        content: '<a href="https://clusterdigitalafrica.com/gouvernance/" target="_blank"> Plus de détails sur la gouvernance ici</a>'
+        content: '<a href="https://clusterdigitalafrica.com/gouvernance/" target="_blank"> So no woodi ko one pamtinaki,gnoddje ndo.</a>'
       });
     }).then(function () {
     return botui.action.button({
@@ -220,7 +220,7 @@ var adhesion = function() {
      botui.action.button({
     delay: 1000,
     action: [{
-      text: 'Comment adhérer?',
+      text: 'Noy natirte?',
       _icon: 'how',
       get icon() {
         return this._icon;
@@ -240,7 +240,7 @@ var adhesion = function() {
       },
       value: 'why'
     },{
-      text: 'Conditions d\'adhésion',
+      text: 'Sardi natirdi',
       _icon: 'list',
       get icon() {
         return this._icon;
@@ -288,7 +288,7 @@ var pourquoi = function() {
     return botui.action.button({
       delay: 1000,
       action: [{
-        text: 'Voir les conditions d\'adhésion',
+        text: 'Djewe sardi natirdi',
         value: 'conditions'
       },{
         text: 'Fornyude',
