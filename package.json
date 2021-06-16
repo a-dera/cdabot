@@ -1,7 +1,7 @@
 {
   "dependencies": {
-    "botui": "^0.3.6",
-    "rivescript": "^2.1.0",
+    "botui": "0.3.6",
+    "rivescript": "2.1.0",
     "vue-toasted": "1.1.28"
   }
 }
