@@ -15,7 +15,7 @@
     "node": ">=11.14"
   },
   "dependencies": {
-    "botui": "0.3.6",
+    "botui": "0.3.9",
     "express": "^4.17.1",
     "handlebars": "^4.7.4",
     "rivescript": "2.1.0",
