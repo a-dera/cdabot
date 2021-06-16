@@ -62,7 +62,7 @@ var presentation = function() {
     botui.message.bot({ // TODO #2 #1 Correction des icones
     delay: 500,
     type:'html',
-      content: 'Cluster walatana enterpiriisidji no kawritiri e no andira haddi ley salla adunaru fu.Nadde ley Cluster, na hoytinana one no djewtirdone salla andè mone e gollidibe mon, e no bindir done dabaredji e mabe.Fa handene, nade ley cluster yo lémnude Afirikki.'
+      content: 'Cluster walatana enterpiriisidji no kawritiri e no andira haddi ley salla adunaru fu.Nadde ley Cluster, na hoytinana one no djewtirdone salla ande mone e gollidibe mon, e no bindir done dabaredji e mabe.Fa handene, nade ley cluster yo lémnude Afirikki.'
       }).then(function () {
     return botui.action.button({
     delay: 1000,
@@ -125,7 +125,7 @@ var gouvernance = function() {
                   <li><strong>Hooreejo teddinaado </strong>Mme Mbaranga Gasarabwe</li>\
                   <li><strong>Hooreejo teddinaado </strong>Messaoud Prosper AMOUYAL</li>\
                   <li><strong>Ndewtudo Hooreejo </strong>Patrick GIVANOVICTH</li>\
-                  <li><strong>Ndewtudo Hooreejo honorifique</strong>Kacem AIYTYALLA</li>\
+                  <li><strong>Ndewtudo Hooreejo teddinaado</strong>Kacem AIYTYALLA</li>\
                   <li><strong>Ndewtudo Hooreejo teddinaado</strong>Balkissa Idé SIDDO</li>\
                   <li><strong>Ndewtudo Hooreejo teddinaado</strong>Diane Malikane Sugira</li>\
                   <li><strong>Ndewtudo Hooreejo teddinaado</strong>Diadié dit Amadou SANKARE</li>\
@@ -220,7 +220,7 @@ var adhesion = function() {
      botui.action.button({
     delay: 1000,
     action: [{
-      text: 'Noy natirte?',
+      text: 'Noy natirte ?',
       _icon: 'how',
       get icon() {
         return this._icon;
@@ -279,9 +279,9 @@ var pourquoi = function() {
   botui.message.bot({ // TODO #2 #1 Correction des icones
     delay: 500,
     type:'html',
-    content: '<ul><li><span class="icon"><i class="fas fa-minus"></i></span>Hokkugol yièdè ley, leydi ndewgu, leydè adunaaru  antarpiriisi djimone</li>\
+    content: '<ul><li><span class="icon"><i class="fas fa-minus"></i></span>Hokkugol yiede ley, leydi ndewgu, leyde adunaaru antarpiriisi djimone</li>\
                   <li><span class="icon"><i class="fas fa-minus"></i></span>Barjeede sarwiisi kebinadi, formason dji lobbi</li>\
-                  <li><span class="icon"><i class="fas fa-minus"></i></span>Hebdè gollidibè walirobe tchède (kalissi)</li>\
+                  <li><span class="icon"><i class="fas fa-minus"></i></span>Hebde gollidibe walirobe tchede (kalissi)</li>\
                   <li><span class="icon"><i class="fas fa-minus"></i></span>Balla et dowtol ley mawningol antarpiriisi djimone</li>\
                   <li><span class="icon"><i class="fas fa-minus"></i></span>Batodone gollidibe mone ley Afrik fou.</li></ul>'
       }).then(function () {
@@ -310,8 +310,7 @@ var conditions = function() {
   botui.message.bot({
     delay: 500,
     type:'html',
-    content: '<ul><li><strong>Naatugol djabanagol</strong><br>Neddo e waldèrè fu na wawi filagol naddè cluster digital na djey nildu dè demande natirgol, hebita formulaire bindi. Gado dum fo naati ndè walderè.</li>\
-                  <li><strong>Adhésion de plein droit</strong><br>Les entreprises dotées d’une personnalité morale, ayant leurs activités qui relèvent du secteur du développement numérique et dont le siège ou un établissement se trouvent sur le territoire africain. Toutefois, l’adhésion est soumise à une ratification par le bureau exécutif à la majorité simple.</li></ul>'
+    content: '<ul><li><strong>Naatugol djabanagol</strong><br>Neddo e waldere fu na wawi filagol nadde cluster digital na djey nildu de demande natirgol, hebita formulaire bindi. Gado dum fo naati nde waldere.</li></ul>'
       }).then(function () {
     return botui.action.button({
       delay: 1000,
