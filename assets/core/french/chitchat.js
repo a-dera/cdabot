@@ -33,6 +33,27 @@ var start_bot = function() {
       if(res.value == 'quitter' || res.value == 'q') {
       mainFrench();
     } else  {
+         return botui.message.bot({ 
+            delay: 500,
+            content: 'Oups,😟 je n\'ai pas bien compris votre recherche 🤔' res.value
+          }).then(function () { 
+            return start_bot()
+          })      
+        }
+  });
+}
+//--------------------------------------------------------------------------
+/* else  {
+         return botui.message.bot({ 
+            delay: 500,
+            content: 'Oups,😟 je n\'ai pas bien compris votre recherche 🤔' res.value
+          }).then(function () { 
+            return start_bot()
+          })      
+        }*/
+
+/**
+ * else  {
         bot.reply("local-user", res).then(function (reply) {
             botReply(reply);
           }).then(function () { 
@@ -45,14 +66,4 @@ var start_bot = function() {
           }) 
         }) 
       }
-  });
-}
-//--------------------------------------------------------------------------
-/* else  {
-         return botui.message.bot({ 
-            delay: 500,
-            content: 'Oups,😟 je n\'ai pas bien compris votre recherche 🤔' res.value
-          }).then(function () { 
-            return start_bot()
-          })      
-        }*/
+ */

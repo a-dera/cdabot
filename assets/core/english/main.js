@@ -68,7 +68,7 @@ var presentationEnglish = function() {
       delay: 1000,
       action: [{
         text: 'Governance',
-        _icon: 'crown',
+        _icon: 'hat',
         get icon() {
           return this._icon;
         },
@@ -78,7 +78,7 @@ var presentationEnglish = function() {
         value: 'gouvernance'
       }, {
         text: 'Executive Office',
-        _icon: 'pen',
+        _icon: 'pencil',
         get icon() {
           return this._icon;
         },
@@ -88,7 +88,7 @@ var presentationEnglish = function() {
         value: 'bureau'
       },{
         text: 'Team',
-        _icon: 'team',
+        _icon: 'users',
         get icon() {
           return this._icon;
         },
@@ -221,7 +221,7 @@ var adhesionEnglish = function() {
     delay: 1000,
     action: [{
       text: 'How to join ?',
-      _icon: 'how',
+      _icon: 'question',
       get icon() {
         return this._icon;
       },
@@ -269,9 +269,28 @@ var adhesionEnglish = function() {
 }
 
 var commentEnglish = function() {
-
-
-
+   botui.message.bot({
+    delay: 500,
+    type:'html',
+    content: '<ul><li>Membership in the Cluster Digital Africa  is by prior application using a membership application form. It is conditioned by the acceptance of the Executive Board of the Cluster Digital Africa . And is valid for the current calendar year. After the acceptance by the structure of validation of applications, the applicant is automatically considered a member of the cluster while accepting the terms of the charter of the Cluster Digital Africa .</li>\
+                  <li><strong>Membership in Cluster Digital Africa  involves:: </strong><br> The commitment to respect the Statutes of the organization. However, if a member does not wish to renew its membership in the network, it must inform the Cluster (by mail or email) within one month (30 days).</li></ul>'
+      }).then(function () {
+    return botui.action.button({
+      delay: 1000,
+      action: [{
+        text: 'Return',
+        icon: 'angle-left',
+        value: 'skip'
+      }
+    ]
+    })
+  }).then(function (res) {
+  if(res.value == 'skip') {
+    adhesionFrench();
+  } else{
+    adhesionFrench();
+  }
+  });
 }
 
 var pourquoiEnglish = function() {

@@ -24,7 +24,7 @@ var mainPular = function() {
       },
       value: 'adhesion'
     },{
-      text: 'Je ne trouve pas ce que je cherche',
+      text: 'Mi yiitay ko pilotoomi',
       _icon: 'search',
       get icon() {
         return this._icon;
@@ -68,7 +68,7 @@ var presentationPular = function() {
     delay: 1000,
     action: [{
       text: 'Laamu',
-      _icon: 'crown',
+      _icon: 'hat',
       get icon() {
         return this._icon;
       },
@@ -78,7 +78,7 @@ var presentationPular = function() {
       value: 'gouvernance'
     }, {
       text: 'Birol nadaraniibe golleéji',
-      _icon: 'pen',
+      _icon: 'pencil',
       get icon() {
         return this._icon;
       },
@@ -88,7 +88,7 @@ var presentationPular = function() {
       value: 'bureau'
     },{
       text: 'Ekip',
-      _icon: 'team',
+      _icon: 'users',
       get icon() {
         return this._icon;
       },
@@ -219,7 +219,7 @@ var teamPular = function() {
 var adhesionPular = function() {
      botui.action.button({
     delay: 1000,
-    action: [{
+    action: [/*{
       text: 'Noy natirte ?',
       _icon: 'how',
       get icon() {
@@ -229,7 +229,7 @@ var adhesionPular = function() {
         this._icon = value;
       },
       value: 'how'
-    }, {
+    },*/ {
       text: 'Kossabi natude ?',
       _icon: 'question',
       get icon() {
@@ -268,11 +268,9 @@ var adhesionPular = function() {
 
 }
 
-var commentPular = function() {
+/*var commentPular = function() {
 
-
-
-}
+}*/
 
 var pourquoiPular = function() {
 
