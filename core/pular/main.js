@@ -1,6 +1,6 @@
 
 /*------ -------------Section main--------*/
-var mainFrench = function() {
+var mainPular = function() {
   botui.action.button({
     delay: 1000,
     action: [{
@@ -109,7 +109,7 @@ var presentation = function() {
       } else if(res.value == 'team') {
         team();
       } else {
-        mainFrench();
+        mainPular();
       }
   })
   });
@@ -262,7 +262,7 @@ var adhesion = function() {
       } else if(res.value == 'conditions') {
         condions();
       } else {
-        mainFrench();
+        mainPular();
       }
   });
 
