@@ -1,4 +1,5 @@
-var botui = new BotUI('cdabot');
+var botui = new BotUI('cdabot'); // initialistion de BotUI
+
 //importation
 document.write("<script language='JavaScript' src='core/droits.js'></script>");
 document.write("<script language='JavaScript' src='core/french/main.js'></script>");
