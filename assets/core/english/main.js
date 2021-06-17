@@ -44,7 +44,7 @@ var mainEnglish = function() {
     } else if(res.value == 'adhesion') {
       adhesionEnglish();
     } else if(res.value == 'search') {
-      chitchatEnglish();
+      chitchatFrench();
     } else {
       start();
     }

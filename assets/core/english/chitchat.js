@@ -1,5 +1,5 @@
 /*------ -------------Section --------*/
-var chitchat = function() {
+var chitchatEnglish = function() {
 
 
 }

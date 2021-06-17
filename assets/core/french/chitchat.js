@@ -1,5 +1,5 @@
 /*------ -------------Section --------*/
-var chitchat = function() {    
+var chitchatFrench = function() {    
     botui.message.bot({ 
         loading:true,
         delay: 1000,
@@ -35,7 +35,7 @@ var start_bot = function() {
     } else  {
          return botui.message.bot({ 
             delay: 500,
-            content: 'Oups,😟 je n\'ai pas bien compris votre recherche 🤔' res.value
+            content: 'Oups,😟 je n\'ai pas bien compris votre recherche 🤔' + res.value
           }).then(function () { 
             return start_bot()
           })      

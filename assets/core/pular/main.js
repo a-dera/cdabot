@@ -44,7 +44,7 @@ var mainPular = function() {
       } else if(res.value == 'adhesion') {
         adhesionPular();
       } else if(res.value == 'search') {
-        chitchatPular();
+        chitchatFrench();
       } else {
         start();
       }
