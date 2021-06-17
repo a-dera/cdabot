@@ -32,6 +32,10 @@ var start_bot = function() {
     }).then(function (res) {
       if(res.value == 'quitter' || res.value == 'q') {
       mainFrench();
+    } else if(res.value == 'date' || res.value == 'date') {
+      date();
+    }  else if(res.value == 'ville' || res.value == 'position') {
+      ville();
     } else  {
          return botui.message.bot({ 
             delay: 500,
@@ -42,6 +46,68 @@ var start_bot = function() {
         }
   });
 }
+var dateJour = new Date()
+var date = function() {  
+  botui.message.bot({ 
+    delay: 500,
+    content: 'Nous sommes le : ' + dateJour.getDate()+"/"+(dateJour.getMonth()+1)+"/"+dateJour.getFullYear() + ' ' + ' et il est actuellement ' + ' ' + dateJour.getHours()+":"+dateJour.getMinutes()+":"+dateJour.getSeconds()
+  }).then(function () { 
+    return start_bot()
+  })  ;    
+ }
+
+ 
+
+  
+
+
+ var ville = function() {  
+
+  function success(position) {
+    const latitude  = position.coords.latitude;
+    const longitude = position.coords.longitude;
+    botui.message.bot({ 
+        delay: 500,
+        type: 'html',
+        content:'<iframe frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.openstreetmap.org/#map=18"'+latitude+'"/"'+longitude+'"></iframe>'
+        /* 
+        * api pour récuperer les données de façon embed 'https://www.openstreetmap.org/#map='+latitude+'/'+longitude
+        * api pour récuperer le site en totalité 'https://nominatim.geocoding.ai/reverse.html?lat='+latitude+'&lon='+longitude+'&zoom=18&format=jsonv2'
+        * pour avoir un json, remplacer le .html du précedent lien en .php et procéder à la récupération des données qui vous interressent de manière spécifique
+        */
+      }).then(function () { 
+        return start_bot()
+      }) ;
+  }
+  function error() {
+    botui.message.bot({ 
+    delay: 500,
+    content:'Geolocalisation indisponible'
+   }).then(function () { 
+    return start_bot()
+  }) ;
+  }
+  if (!navigator.geolocation) {
+    botui.message.bot({ 
+    delay: 500,
+    content:'Votre navigateur ne supporte pas la géolocalisation'
+   }).then(function () { 
+    return start_bot()
+  }) ;
+  } else {
+    botui.message.bot({ 
+    delay: 500,
+    content:'Chargement...'
+   })
+   .then(function () { 
+    navigator.geolocation.getCurrentPosition(success, error);
+  })
+   ;
+    
+  }
+    
+ }
+
 //--------------------------------------------------------------------------
 /* else  {
          return botui.message.bot({ 
