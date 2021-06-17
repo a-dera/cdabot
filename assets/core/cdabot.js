@@ -12,11 +12,11 @@ document.write("<script language='JavaScript' src='assets/core/pular/main.js'></
         Vue.toasted.show('<div class="control"><div class="tags has-addons"><span class="tag is-primary is-light">CDA BOT</span><span class="tag is-info is-light">V0.1-beta.1</span></div></div><span class="tag is-info is-rounded">Proposé par A. DERA et E. GUIRE<span>',{
             theme: "outline", 
             position: "top-center", 
-            duration : 3000
+            duration : 5000
         });
     }).then(function () {
       return botui.message.bot({
-        delay: 1000,
+        delay: 500,
         content: 'Je peux vous aider à trouver plus rapidement ce que vous chercher'
       });
     }).then(function () {
@@ -28,12 +28,11 @@ document.write("<script language='JavaScript' src='assets/core/pular/main.js'></
 var start = function(){
   botui.message.bot({
     loading:true,
-    delay: 2000,
+    delay: 100,
     content: 'Sélectionner une langue pour commencer',
   })
     .then(function () {
       return botui.action.button({
-        delay: 1000,
         action: [{
           text: 'English',
           _icon: 'check',

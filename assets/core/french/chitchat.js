@@ -1,3 +1,4 @@
+document.write("<script language='JavaScript' src='assets/core/french/tag.js'></script>");
 /*------ -------------Section --------*/
 var chitchatFrench = function() {    
     botui.message.bot({ 
@@ -22,7 +23,7 @@ var chitchatFrench = function() {
       
      
 } 
-var start_bot = function() {  
+/*var start_bot = function() {  
   botui.action.text({
     delay: 1000,
     action: {
@@ -39,13 +40,64 @@ var start_bot = function() {
     } else  {
          return botui.message.bot({ 
             delay: 500,
-            content: 'Oups,😟 je n\'ai pas bien compris votre recherche 🤔' + res.value
+            content: 'Oups,😟 je n\'ai pas bien compris votre recherche 🤔'
           }).then(function () { 
             return start_bot()
           })      
         }
   });
+}*/
+var start_bot = function() {  
+  botui.action.text({
+    delay: 1000,
+    action: {
+      icon: 'search',
+      placeholder: 'Taper quelque chose ✍️...'
+    }
+    }).then(function (res) {
+      const mots_cles = res.value.split(' ');
+
+      //if( ) { 
+      //for (words in mots_cles) {var matches = words.match(dateTags);}
+      if (dateTags.includes(res.value)){
+        date();
+      } else if (localisationTags.includes(res.value)){
+        ville();
+      } else if (res.value == 'bonjour' || res.value == 'salut' || res.value == 'ça va' || res.value == 'hello' || res.value == 'bonsoir'){
+        return botui.message
+          .bot({
+            delay: 500,
+            content: 'Bonjour, comment allez vous?'
+          })
+          .then(function () {
+            return start_bot();
+          });
+      } else if (salutationsTags.includes(res.value)){
+        salutations();
+      } else {
+        return botui.message
+          .bot({
+            delay: 500,
+            content: 'Oups,😟 je n\'ai pas bien compris votre recherche 🤔'
+          })
+          .then(function () {
+            return start_bot();
+          });
+      }
+  });
 }
+
+var salutations = function() {  
+ botui.message.bot({ 
+    delay: 500,
+    content: 'Bonjour'
+  }).then(function () { 
+    return start_bot()
+  })  ; 
+}
+
+
+
 var dateJour = new Date()
 var date = function() {  
   botui.message.bot({ 

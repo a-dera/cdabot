@@ -1,9 +1,10 @@
 document.write("<script language='JavaScript' src='assets/core/french/chitchat.js'></script>");
+document.write("<script language='JavaScript' src='assets/core/french/tag.js'></script>");
 document.write("<script language='JavaScript' src='core/rivescript.js'></script>");
 /*------ -------------Section main--------*/
 var mainFrench = function() {
   botui.action.button({
-    delay: 1000,
+    delay: 500,
     action: [{
       text: 'En savoir plus sur Cluster Digital Africa',
       _icon: 'info',
