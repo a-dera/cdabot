@@ -63,7 +63,7 @@ var start_bot = function() {
         date();
       } else if (localisationTags.includes(res.value)){
         ville();
-      } else if (res.value == 'bonjour' || res.value == 'salut' || res.value == 'ça va' || res.value == 'hello' || res.value == 'bonsoir'){
+      } else if (res.value == 'bonjour' || res.value == 'salut' || res.value == 'Bonjour' || res.value == 'hello' || res.value == 'Salut'){
         return botui.message
           .bot({
             delay: 500,
@@ -74,7 +74,9 @@ var start_bot = function() {
           });
       } else if (salutationsTags.includes(res.value)){
         salutations();
-      } else {
+      }  else if (res.value == 'quitter' || res.value == 'q'){
+        mainFrench();
+      }  else {
         return botui.message
           .bot({
             delay: 500,
