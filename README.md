@@ -130,8 +130,6 @@ Ultime Goal
 <!-- GETTING STARTED -->
 ## Getting Started
 
-Pour lancer ce bot en local, il vous
-
 ### Preréquis
 
 
