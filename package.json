@@ -9,7 +9,7 @@
     "fix": "eslint --fix *.js",
     "test": "mocha test/*.test.js --check-leaks --timeout 5000"
   },
-  "author": "Amédée DERA Elisée GUIRE",
+  "author": "Amédée DERA, Elisée GUIRE",
   "license": "MIT",
   "engines": {
     "node": ">=11.14"
