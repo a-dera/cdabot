@@ -211,6 +211,6 @@ Liste de tous les contributeurs --> [contributors](https://github.com/a-dera/cda
 [issues-shield]: https://img.shields.io/github/issues/a-dera/cdabot.svg?style=for-the-badge
 [issues-url]: https://github.com/a-dera/cdabot/issues
 [license-shield]: https://img.shields.io/github/license/a-dera/cdabot.svg?style=for-the-badge
-[license-url]: https://github.com/a-dera/cdabot/blob/master/LICENSE.txt
+[license-url]: https://github.com/a-dera/cdabot/blob/master/LICENSE
 [product-screenshot]: images/screenshot.png
 
